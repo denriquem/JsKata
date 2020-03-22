@@ -9,7 +9,8 @@ describe("FizzBuzz", function() {
     expect(fizzbuzz.bing(1)).toEqual(1);
   });
 
-  it("should return the number 1, 2, 3, 4, 5 when passed an array containing those numbers", function() {
-    expect(fizzbuzz.bing("1, 2, 3, 4, 5")).toEqual("1, 2, 3, 4, 5");
+  it("should return 1, 2, fizz, 4, 5 when passed and array of numbers up to 5", function() {
+    var fizzer = [1, 2, "fizz", 4, 5];
+    expect(fizzbuzz.bing("1, 2, 3, 4, 5")).toEqual(fizzer);
   });
 });
