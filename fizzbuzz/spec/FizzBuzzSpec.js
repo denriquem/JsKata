@@ -10,7 +10,18 @@ describe("FizzBuzz", function() {
   });
 
   it("should return 1, 2, fizz, 4, 5 when passed and array of numbers up to 5", function() {
-    var fizzer = [1, 2, "fizz", 4, 5];
+    var fizzer = ["1", "2", "fizz", "4", "5"];
     expect(fizzbuzz.bing("1, 2, 3, 4, 5")).toEqual(fizzer);
+  });
+
+  it("should return numbers with all multiples of three converted to fizz", function() {
+    expect(fizzbuzz.bing("1, 2, 3, 4, 5, 6")).toEqual([
+      "1",
+      "2",
+      "fizz",
+      "4",
+      "5",
+      "fizz"
+    ]);
   });
 });
