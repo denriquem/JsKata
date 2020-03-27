@@ -16,4 +16,10 @@ describe("Order", function() {
       "Please1 don't2 leave3"
     );
   });
+
+  it("should correctly order any 4 word string", function() {
+    expect(order.sort("would2 Why1 leave4 I3")).toEqual(
+      "Why1 would2 I3 leave4"
+    );
+  });
 });
