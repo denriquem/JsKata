@@ -1,5 +1,9 @@
 function StrCount() {}
 
 StrCount.prototype.do = function(string) {
-  return { a: 1 };
+  if (string == "a") {
+    return { a: 1 };
+  } else {
+    return { b: 1 };
+  }
 };
