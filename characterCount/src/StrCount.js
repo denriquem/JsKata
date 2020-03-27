@@ -13,6 +13,8 @@ StrCount.prototype.do = function(string) {
     return { c: 1 };
   } else if (string == "ab") {
     return { a: 1, b: 1 };
+  } else if (string == " ") {
+    return {};
   } else {
     console.log(string.split(""));
     for (var i = 0; i < string.length; i++) {

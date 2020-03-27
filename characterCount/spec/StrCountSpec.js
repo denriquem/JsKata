@@ -24,4 +24,8 @@ describe("StrCount", function() {
   it("should return a: 2, b: 1, c: 1 passed abac, function", function() {
     expect(strCount.do("abac")).toEqual({ a: 2, b: 1, c: 1 });
   });
+
+  it("should return and empty object when passed an empty string", function() {
+    expect(strCount.do(" ")).toEqual({});
+  });
 });
