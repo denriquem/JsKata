@@ -20,4 +20,8 @@ describe("ArrayDiff", function() {
   it("should remove 3 from a four digit array", function() {
     expect(diff.do([1, 2, 3, 4], [3])).toEqual([1, 2, 4]);
   });
+
+  it("should remove any given number from array", function() {
+    expect(diff.do([1, 2, 3, 4, 5], [1])).toEqual([2, 3, 4, 5]);
+  });
 });
