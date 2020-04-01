@@ -8,4 +8,8 @@ describe("ArrayDiff", function() {
   it("should return an empty array when passed a first array of 1 with a second argument of 1", function() {
     expect(diff.do([1], [1])).toEqual([]);
   });
+
+  it("should remove 1 from array when passed an array of one and two", function() {
+    expect(diff.do([1, 2], [1])).toEqual([1]);
+  });
 });
