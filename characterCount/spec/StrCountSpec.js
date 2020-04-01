@@ -28,4 +28,8 @@ describe("StrCount", function() {
   it("should return and empty object when passed an empty string", function() {
     expect(strCount.do(" ")).toEqual({});
   });
+
+  it("should count any variation of letters in a string an print the count in an object", function() {
+    expect(strCount.do("abbaccd")).toEqual({ a: 2, b: 2, c: 1, d: 1 });
+  });
 });
