@@ -12,4 +12,8 @@ describe("ArrayDiff", function() {
   it("should remove 1 from array when passed an array of one and two", function() {
     expect(diff.do([1, 2], [1])).toEqual([1]);
   });
+
+  it("should remove 2 from a three digit array", function() {
+    expect(diff.do([1, 2, 3], [2])).toEqual([1, 3]);
+  });
 });
