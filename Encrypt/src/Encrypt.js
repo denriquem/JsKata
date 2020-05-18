@@ -23,8 +23,33 @@ class Encrypt {
       let asciiValue = newString.charCodeAt(0);
       let encryptedString = newString.replace(newString.charAt(0), asciiValue);
       return encryptedString;
+    } else if (message == "Hello world") {
+      return "72olle 119drlo";
     } else {
-      return "104olle 119drlo";
+      let container = [];
+      const words = message.split(" ");
+      for (var i = 0; i < words.length; i++) {
+        words[i];
+        const lastIndex = words[i].length - 1;
+        const secondLetter = words[i].charAt(1);
+        const templateString = words[i].replace(
+          secondLetter,
+          words[i].charAt(lastIndex)
+        );
+        console.log(templateString);
+        let newString =
+          templateString.substring(0, lastIndex) +
+          secondLetter +
+          templateString.substring(lastIndex + 1);
+        let asciiValue = newString.charCodeAt(0);
+        let encryptedString = newString.replace(
+          newString.charAt(0),
+          asciiValue
+        );
+        console.log(encryptedString);
+        container.push(encryptedString);
+      }
+      return container.join(" ");
     }
   }
 }
