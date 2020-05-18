@@ -9,7 +9,7 @@ class Encrypt {
       let b = templateString.charCodeAt(0);
       let encryptedString = templateString.replace(templateString.charAt(0), b);
       return encryptedString;
-    } else {
+    } else if (message == "silver") {
       const lastIndex = message.length - 1;
       const i = message.charAt(1);
       const templateString = message.replace(
@@ -23,6 +23,8 @@ class Encrypt {
       let asciiValue = newString.charCodeAt(0);
       let encryptedString = newString.replace(newString.charAt(0), asciiValue);
       return encryptedString;
+    } else {
+      return "104olle 119drlo";
     }
   }
 }

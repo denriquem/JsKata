@@ -18,4 +18,9 @@ describe("Encrypt", () => {
     const encrypt = new Encrypt();
     expect(encrypt.encryptThis("silver")).toEqual("115rlvei");
   });
+
+  it("should encrypt a string containng two words", () => {
+    const encrpyt = new Encrypt();
+    expect(encrpyt.encryptThis("Hello world")).toEqual("104olle 119drlo");
+  });
 });
