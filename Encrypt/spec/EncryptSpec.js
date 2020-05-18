@@ -13,4 +13,9 @@ describe("Encrypt", () => {
     const encrypt = new Encrypt();
     expect(encrypt.encryptThis("good")).toEqual("103doo");
   });
+
+  it("should return 115rlvei when passed silver", () => {
+    const encrypt = new Encrypt();
+    expect(encrypt.encryptThis("silver")).toEqual("115rlvei");
+  });
 });

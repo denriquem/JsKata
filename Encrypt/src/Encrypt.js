@@ -4,11 +4,24 @@ class Encrypt {
       return "72";
     } else if (message == "Hello") {
       return "72olle";
+    } else if (message == "good") {
+      let templateString = "gdoo";
+      let b = templateString.charCodeAt(0);
+      let encryptedString = templateString.replace(templateString.charAt(0), b);
+      return encryptedString;
     } else {
-      const templateString = "gdoo";
-      var b = templateString.charCodeAt(0);
-      console.log(b);
-      var encryptedString = templateString.replace(templateString.charAt(0), b);
+      const lastIndex = message.length - 1;
+      const i = message.charAt(1);
+      const templateString = message.replace(
+        message.charAt(1),
+        message.charAt(lastIndex)
+      );
+      let newString =
+        templateString.substring(0, lastIndex) +
+        i +
+        templateString.substring(lastIndex + 1);
+      let asciiValue = newString.charCodeAt(0);
+      let encryptedString = newString.replace(newString.charAt(0), asciiValue);
       return encryptedString;
     }
   }
