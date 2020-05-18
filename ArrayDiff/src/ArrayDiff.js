@@ -9,10 +9,16 @@ ArrayDiff.prototype.do = function(a, b) {
     return [1, 3];
   } else {
     number = b.pop();
+    // var firstIndex = a.indexOf(number);
+    // a.splice(firstIndex, 1);
 
-    var firstIndex = a.indexOf(number);
+    function isB(z) {
+      return z != number;
+    }
 
-    a.splice(firstIndex, 1);
+    var newArr = a.filter(isB);
+    return newArr;
+
     return a;
   }
 };
