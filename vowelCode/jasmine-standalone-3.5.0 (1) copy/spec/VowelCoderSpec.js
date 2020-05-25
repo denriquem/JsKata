@@ -16,4 +16,8 @@ describe("VowelCoder", () => {
   it("should return h1 when passed ha", () => {
     expect(vowelCoder.encode("ha")).toEqual("h1");
   });
+
+  it("should return h2ll when passed hell", () => {
+    expect(vowelCoder.encode("hell")).toEqual("h2ll");
+  });
 });

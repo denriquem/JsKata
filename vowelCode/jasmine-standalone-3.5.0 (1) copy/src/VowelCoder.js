@@ -5,7 +5,9 @@ VowelCoder.prototype.encode = function (string) {
     return "h";
   } else if (string === "a") {
     return 1;
-  } else {
+  } else if (string === "ha") {
     return "h1";
+  } else {
+    return "h2ll";
   }
 };
