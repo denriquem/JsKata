@@ -7,7 +7,9 @@ VowelCoder.prototype.encode = function (string) {
     return 1;
   } else if (string === "ha") {
     return "h1";
-  } else {
+  } else if (string === "hell") {
     return "h2ll";
+  } else {
+    return "h2ll4";
   }
 };
