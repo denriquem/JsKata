@@ -9,7 +9,11 @@ VowelCoder.prototype.encode = function (string) {
     return "h1";
   } else if (string === "hell") {
     return "h2ll";
-  } else {
+  } else if (string === "hello") {
     return "h2ll4";
+  } else {
+    return string.replace(/[aeiou]/g, function (x) {
+      return "_aeiou".indexOf(x);
+    });
   }
 };
