@@ -6,6 +6,22 @@ describe("NarcNumber", () => {
   });
 
   it("should return true when passed 1", () => {
-    expect(narcNumber.isInlove()).toEqual(true);
+    expect(narcNumber.isInlove(1)).toEqual(true);
+  });
+
+  it("should return false when passed 10", () => {
+    expect(narcNumber.isInlove(10)).toEqual(false);
+  });
+
+  it("should return true when passed 154", () => {
+    expect(narcNumber.isInlove(154)).toEqual(true);
+  });
+
+  it("should return false when passed 155", () => {
+    expect(narcNumber.isInlove(155)).toEqual(false);
+  });
+
+  it("should calculate that a single digit narcNumber is a narc", () => {
+    expect(narcNumber.isInlove(2)).toEqual(true);
   });
 });
