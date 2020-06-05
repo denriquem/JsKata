@@ -32,4 +32,8 @@ describe("NarcNumber", () => {
   it("should calculate that three digit number is not a narc number", () => {
     expect(narcNumber.isInlove(169)).toEqual(false);
   });
+
+  it("should cacluate that four digit number is not a narc number", () => {
+    expect(narcNumber.isInlove(1635)).toEqual(false);
+  });
 });
