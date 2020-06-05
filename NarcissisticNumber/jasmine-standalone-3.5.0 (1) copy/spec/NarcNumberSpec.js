@@ -24,4 +24,12 @@ describe("NarcNumber", () => {
   it("should calculate that a single digit narcNumber is a narc", () => {
     expect(narcNumber.isInlove(2)).toEqual(true);
   });
+
+  it("should calculate that a three digit number is a narc number", () => {
+    expect(narcNumber.isInlove(370)).toEqual(true);
+  });
+
+  it("should calculate that three digit number is not a narc number", () => {
+    expect(narcNumber.isInlove(169)).toEqual(false);
+  });
 });
