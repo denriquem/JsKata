@@ -14,7 +14,7 @@ describe("NarcNumber", () => {
   });
 
   it("should return true when passed 154", () => {
-    expect(narcNumber.isInlove(154)).toEqual(true);
+    expect(narcNumber.isInlove(153)).toEqual(true);
   });
 
   it("should return false when passed 155", () => {

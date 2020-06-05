@@ -14,6 +14,14 @@ NarcNumber.prototype.isInlove = function (number) {
       return false;
     }
   } else {
-    return true;
+    numArray = number.toString().split("");
+    const digitNumber = numArray.length;
+    const newArr = numArray.map((x) => Math.pow(x, digitNumber));
+    const summedNewArr = newArr.reduce((a, b) => a + b, 0);
+    if (summedNewArr !== number) {
+      return false;
+    } else {
+      return true;
+    }
   }
 };
