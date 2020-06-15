@@ -13,4 +13,10 @@ describe("Rover", () => {
     rover.move(1, 0);
     expect(rover.move(0, 3)).toEqual("current location: (-1, 1)");
   });
+
+  it("should return current location after any three moves", () => {
+    rover.move(1, 0);
+    rover.move(0, 3);
+    expect(rover.move(4, 2)).toEqual("current location: (1, 1)");
+  });
 });
