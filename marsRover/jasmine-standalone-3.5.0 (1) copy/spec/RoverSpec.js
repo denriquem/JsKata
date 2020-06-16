@@ -19,4 +19,8 @@ describe("Rover", () => {
     rover.move(0, 3);
     expect(rover.move(4, 2)).toEqual("current location: (1, 1)");
   });
+
+  it("should face east after being told to move one move to the right", () => {
+    expect(rover.turn(0, 1)).toEqual("Facing East");
+  });
 });

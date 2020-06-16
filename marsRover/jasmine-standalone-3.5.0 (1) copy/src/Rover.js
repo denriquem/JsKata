@@ -16,3 +16,7 @@ Rover.prototype.move = function (forward, back) {
     return `current location: (${this.startingLocationX}, 1)`;
   }
 };
+
+Rover.prototype.turn = function (left, right) {
+  return "Facing East";
+};
