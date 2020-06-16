@@ -2,7 +2,7 @@ describe("Rover", () => {
   let rover;
 
   beforeEach(() => {
-    rover = new Rover(1, 1, "N");
+    rover = new Rover(1, 1, "North");
   });
 
   it("should return current location as 2,1, when told to move one coordinate and starting from coordinate 1,1 and facing north", () => {
@@ -26,5 +26,9 @@ describe("Rover", () => {
 
   it("should face north after turning right and then turning left", () => {
     expect(rover.turn(1, 0)).toEqual("Facing North");
+  });
+
+  it("should face the correct direction after any turn", () => {
+    expect(rover.turn(0, 3)).toEqual("Facing West");
   });
 });

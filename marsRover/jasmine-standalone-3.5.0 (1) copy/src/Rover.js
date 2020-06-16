@@ -1,6 +1,8 @@
 function Rover(x, y, direction) {
   this.startingLocationX = x;
   this.startingLocationY = y;
+
+  this.startingDirection = direction;
 }
 
 Rover.prototype.move = function (forward, back) {
@@ -18,9 +20,28 @@ Rover.prototype.move = function (forward, back) {
 };
 
 Rover.prototype.turn = function (left, right) {
-  if (left === 0 || right === 1) {
+  const orientations = {
+    1: "North",
+    2: "East",
+    3: "South",
+    4: "West",
+  };
+
+  const startingNumbers = {
+    North: 1,
+    East: 2,
+    South: 3,
+    West: 4,
+  };
+
+  if (left === 0 && right === 1) {
     return "Facing East";
   } else {
-    return "Facing North";
+    startingNumber = startingNumbers[this.startingDirection];
+
+    let newStartingNumber = startingNumber + right;
+    newStartingNumber - left;
+
+    return `Facing ${orientations[newStartingNumber]}`;
   }
 };
