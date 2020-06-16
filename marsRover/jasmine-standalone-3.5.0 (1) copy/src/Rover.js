@@ -41,16 +41,27 @@ Rover.prototype.turn = function (left, right) {
     let newStartingNumber = startingNumber + rightOrLeft;
     if (newStartingNumber > 4) {
       let adjustedNumber = newStartingNumber - 4;
-      this.currentDirection = orientations[adjustedNumber];
-      return `Facing ${this.currentDirection}`;
+      return this._pivot(adjustedNumber);
     }
-    this.currentDirection = orientations[newStartingNumber];
-    return `Facing ${this.currentDirection}`;
+    return this._pivot(newStartingNumber);
   } else {
     startingNumber = startingNumbers[this.startingDirection];
     let rightOrLeft = right - left;
     let newStartingNumber = startingNumber + rightOrLeft;
-    this.currentDirection = orientations[newStartingNumber];
-    return `Facing ${this.currentDirection}`;
+    return this._pivot(newStartingNumber);
   }
+};
+
+// private
+
+Rover.prototype._pivot = function (orientationNumber) {
+  const orientations = {
+    1: "North",
+    2: "East",
+    3: "South",
+    4: "West",
+  };
+
+  this.currentDirection = orientations[orientationNumber];
+  return `Facing ${this.currentDirection}`;
 };
