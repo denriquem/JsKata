@@ -23,4 +23,8 @@ describe("Rover", () => {
   it("should face east after being told to move one move to the right", () => {
     expect(rover.turn(0, 1)).toEqual("Facing East");
   });
+
+  it("should face north after turning right and then turning left", () => {
+    expect(rover.turn(1, 0)).toEqual("Facing North");
+  });
 });

@@ -18,5 +18,9 @@ Rover.prototype.move = function (forward, back) {
 };
 
 Rover.prototype.turn = function (left, right) {
-  return "Facing East";
+  if (left === 0 || right === 1) {
+    return "Facing East";
+  } else {
+    return "Facing North";
+  }
 };
