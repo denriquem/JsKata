@@ -3,6 +3,7 @@ function Rover(x, y, direction) {
   this.startingLocationY = y;
 
   this.startingDirection = direction;
+  this.currentDirection = null;
 }
 
 Rover.prototype.move = function (forward, back) {
@@ -34,14 +35,22 @@ Rover.prototype.turn = function (left, right) {
     West: 4,
   };
 
-  if (left === 0 && right === 1) {
-    return "Facing East";
+  if (this.currentDirection !== null) {
+    let startingNumber = startingNumbers[this.currentDirection];
+    let rightOrLeft = right - left;
+    let newStartingNumber = startingNumber + rightOrLeft;
+    if (newStartingNumber > 4) {
+      let adjustedNumber = newStartingNumber - 4;
+      this.currentDirection = orientations[adjustedNumber];
+      return `Facing ${this.currentDirection}`;
+    }
+    this.currentDirection = orientations[newStartingNumber];
+    return `Facing ${this.currentDirection}`;
   } else {
     startingNumber = startingNumbers[this.startingDirection];
-
-    let newStartingNumber = startingNumber + right;
-    newStartingNumber - left;
-
-    return `Facing ${orientations[newStartingNumber]}`;
+    let rightOrLeft = right - left;
+    let newStartingNumber = startingNumber + rightOrLeft;
+    this.currentDirection = orientations[newStartingNumber];
+    return `Facing ${this.currentDirection}`;
   }
 };
