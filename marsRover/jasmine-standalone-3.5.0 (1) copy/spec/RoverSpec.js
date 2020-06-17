@@ -20,6 +20,11 @@ describe("Rover", () => {
       rover.move(0, 3);
       expect(rover.move(4, 2)).toEqual("current location: (1, 1)");
     });
+
+    it("should move positively along y axis when facing east", () => {
+      rover.turn(0, 1);
+      expect(rover.move(1, 0)).toEqual("current location: (1, 2)");
+    });
   });
 
   describe("#turn", () => {

@@ -7,7 +7,11 @@ function Rover(x, y, direction) {
 }
 
 Rover.prototype.move = function (forward, back) {
-  if (forward === 1 && back === 0) {
+  if (this.currentDirection === "East") {
+    let forwardOrBack = forward - back;
+    this.startingLocationY = this.startingLocationY + forwardOrBack;
+    return `current location: (${this.startingLocationX}, ${this.startingLocationY})`;
+  } else if (forward === 1 && back === 0) {
     this.startingLocationX = this.startingLocationX + forward;
     return "current location: (2,1)";
   } else if (forward === 0 && back === 3) {
