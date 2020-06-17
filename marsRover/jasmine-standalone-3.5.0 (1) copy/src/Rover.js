@@ -7,27 +7,20 @@ function Rover(x, y, direction) {
 }
 
 Rover.prototype.move = function (forward, back) {
-  if (forward === 1 || back === 0) {
-    this.startingLocationX + forward;
+  if (forward === 1 && back === 0) {
+    this.startingLocationX = this.startingLocationX + forward;
     return "current location: (2,1)";
-  } else if (forward === 0 || back === 3) {
-    this.startingLocationX - back;
+  } else if (forward === 0 && back === 3) {
+    this.startingLocationX = this.startingLocationX - back;
     return "current location: (-1, 1)";
   } else {
-    this.startingLocationX + forward;
-    this.startingLocationX - back;
+    forwardOrBack = forward - back;
+    this.startingLocationX = this.startingLocationX + forwardOrBack;
     return `current location: (${this.startingLocationX}, 1)`;
   }
 };
 
 Rover.prototype.turn = function (left, right) {
-  const orientations = {
-    1: "North",
-    2: "East",
-    3: "South",
-    4: "West",
-  };
-
   const startingNumbers = {
     North: 1,
     East: 2,
@@ -50,6 +43,11 @@ Rover.prototype.turn = function (left, right) {
     let newStartingNumber = startingNumber + rightOrLeft;
     return this._pivot(newStartingNumber);
   }
+};
+
+Rover.prototype.detect = function () {
+  console.log(this.startingLocationX);
+  return `current location: (${this.startingLocationX},${this.startingLocationY}), facing ${this.currentDirection}`;
 };
 
 // private

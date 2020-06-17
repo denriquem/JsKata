@@ -42,4 +42,12 @@ describe("Rover", () => {
       expect(rover.turn(0, 3)).toEqual("Facing South");
     });
   });
+
+  describe("#detect", () => {
+    it("should return the rovers current location and the direction it is facing", () => {
+      rover.move(1, 0);
+      rover.turn(0, 1);
+      expect(rover.detect()).toEqual("current location: (2,1), facing East");
+    });
+  });
 });
